@@ -68,12 +68,8 @@
                  breaklinks = true,
                  linktocpage,
                  pagebackref,
-                 colorlinks=false,  % was true
-                 filecolor = magenta,
-                 linkcolor = brown,
-                 urlcolor  = blue,
-                 citecolor = red,
-                 anchorcolor = green,
+                 colorlinks = true,  % was true
+                 linkcolor = blue,
                  hyperindex = true,
                  %hyperfigures % not needed, figures should be referenced
                  ]{hyperref} 
@@ -83,21 +79,6 @@
     \pdfcompresslevel=9
     \graphicspath{{frontmatter/figures/PNG/}{frontmatter/figures/PDF/}{frontmatter/figures/}}
     
-    \pdfinfo { /Title  (\ifx\MySubTitle\undefined
-                           \@title
-                         \else
-                           \@title: \@SubTitle
-                         \fi)
-               /Creator (TeX)
-               /Producer (pdfTeX)
-               /Author (\@author)
-               /CreationDate (D:YYYYMMDDhhmmss)  %format D:YYYYMMDDhhmmss
-               /ModDate (D:YYYYMMDDhhmmss)
-               /Subject (\@PDFSubject)
-               /Keywords (\@PDFkeywords)}
-    \pdfcatalog { /PageMode (/UseOutlines)
-                  /OpenAction (fitbh)  }
-
 \else
     \usepackage[ dvips, 
                  bookmarks,
@@ -180,7 +161,7 @@
 \def\PDFkeywords#1{\gdef\@PDFkeywords{#1}}
 
 % The name of the author (usually the person writing the document!!!)
-\def\author[#1]#2{\gdef\@AuthorEmail{#1} \gdef\@author{#2}}
+\def\author#1{\gdef\@author{#1}}
 
 % The year and term the degree will be officially conferred
 \def\DegreeDate#1{\gdef\@DegreeDate{#1}}
@@ -242,8 +223,8 @@
           \else
           {\MakeUppercase{\@title}: \\ \small{\MakeUppercase{\@SubTitle}}}
           \fi}} \par}
-    {\href{mailto:\@AuthorEmail}{\@author} \par} 
-{\large  \vspace*{3ex}
+          {\Large \vspace*{5mm}{\@author} \par} 
+{\large  \vspace*{1cm}
     {A DISSERTATION \par}
         \vspace*{0.5ex}
     {in \par}
@@ -261,55 +242,36 @@
     {\@DegreeDate \par}
 }%end large
   \end{center}
-  \vspace*{1mm}
+  \vspace*{1cm}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
 \textbf{Supervisor of Dissertation} & \textbf{Graduate Group Chairperson}\\
 \ & \ \\
 \rule[-0.1in]{2in}{0.007in} & \rule[-0.1in]{2in}{0.007in} \\  
 \@supervisorname & \@gradchairname  \\
 {\scriptsize \@supervisortitle} & {\scriptsize \@gradchairtitle} \\
-\end{tabular*} \vspace*{1mm} 
+\end{tabular*} \vspace*{1cm} 
 \hfill \\
 \vspace*{1mm}
-\noindent \textbf{Dissertation Comittee:}
+{\noindent \textbf{\underline{Dissertation Committee}}}
 \vspace*{1mm}
 
 \ifx\@firstcomittee\undefined 
   \relax
 \else
-\noindent\@firstcomittee, {\small \@firstcomitteetitle}
+{\noindent \small \@firstcomittee, \@firstcomitteetitle}
 \fi
 \\
 \ifx\@secondcomittee\undefined 
   \relax
 \else
-\@secondcomittee, {\small \@secondcomitteetitle}
+{\small \@secondcomittee, \@secondcomitteetitle}
 \fi
 \\
 \ifx\@thirdcomittee\undefined 
   \relax
 \else
-\@thirdcomittee, {\small \@thirdcomitteetitle}
+{\small \@thirdcomittee, \@thirdcomitteetitle}
 \fi
-\\
-\ifx\@fourthcomittee\undefined 
-  \relax
-\else
-\@fourthcomittee, {\small \@fourthcomitteetitle}
-\fi
-\\
-\ifx\@fifthcomittee\undefined 
-  \relax
-\else
-\@fifthcomittee, {\small \@fifthcomitteetitle}
-\fi
-\\
-\ifx\@sixthcomittee\undefined 
-  \relax
-\else
-\@sixthcomittee, {\small \@sixthcomitteetitle}
-\fi
-\\
 \end{alwayssingle}}
 
 %: ------------------------------------------------------------------------
@@ -336,7 +298,7 @@
   {\large  \vspace*{11pt}
   {{\@DegreeDate} \par}}
   {\large  \vspace*{11pt}
-  {\href{mailto:\@AuthorEmail}{\@author} \par}} 
+  {{\@author} \par}} 
   {\large  \vspace*{11pt}
   {{\@CopyrightStatement} \par}}
 \vspace*{2\baselineskip}
@@ -399,7 +361,7 @@
           {{\MakeUppercase{\@title}}: {\MakeUppercase{\@SubTitle}}}
           \fi \par}
     \vspace*{0.25ex}
-  {\href{mailto:\@AuthorEmail}{\@author} \par} 
+    {{\@author} \par} 
     \vspace*{0.25ex}
   {{\@supervisorname} \par}
   \end{center}

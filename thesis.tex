@@ -131,12 +131,8 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/}
 
 \include{introduction/introduction}	
 
-\part{In the Beginning\ldots}
-
-\include{example_chapter/aims}		
+\include{chapters/ch2_background}		
 			
-\part{A New Paradigm\ldots}
-
 \include{conclusion/conclusion}  
 
 % --------------------------------------------------------------
@@ -199,16 +195,16 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/}
 
 \clearpage
 \begin{partChapter}
-\begin{multicols}{2} % \begin{multicols}{ # columns}[ header text][ space]
-\begin{tiny} % tiny(5) < scriptsize(7) < footnotesize(8) < small (9)
+%\begin{multicols}{1} % \begin{multicols}{ # columns}[ header text][ space]
+\begin{footnotesize} % tiny(5) < scriptsize(7) < footnotesize(8) < small (9)
 
-\bibliographystyle{Latex/Classes/PhDbiblio-url2} % Title is link if provided
+\bibliographystyle{Latex/Classes/PhDbiblio-url} % Title is link if provided
 \renewcommand{\bibname}{References} % changes the header; default: Bibliography
 
 \bibliography{./backmatter/references} % adjust this to fit your BibTex file
 
-\end{tiny}
-\end{multicols}
+\end{footnotesize}
+%\end{multicols}
 \end{partChapter}
 
 

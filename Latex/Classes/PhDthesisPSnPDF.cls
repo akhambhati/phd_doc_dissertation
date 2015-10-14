@@ -87,12 +87,9 @@
                  breaklinks = true,
                  linktocpage,
                  pagebackref,
-                 colorlinks=false,
-                 filecolor = magenta,
-                 linkcolor = brown,
-                 urlcolor  = blue,
+                 colorlinks = true,
+                 linkcolor = blue,
                  citecolor = red,
-                 anchorcolor = green,
                  hyperindex = true,
                  % hyperfigures % not needed, figures should be referenced 
                  ]{hyperref}

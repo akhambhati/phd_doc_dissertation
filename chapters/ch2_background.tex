@@ -1,0 +1,114 @@
+\chapter{Background}
+\label{ch:background}
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{chapters/ch2_figures/PNG/}{chapters/ch2_figures/PDF/}{chapters/ch2_figures/}}
+\else
+    \graphicspath{{chapters/ch2_figures/EPS/}{chapters/ch2_figures/}}
+\fi
+
+
+% ----------------------------------------------------------------------
+%: ----------------------- content ----------------------- 
+% ----------------------------------------------------------------------
+
+\section{Diagnosis and Treatment of Neocortical Epilepsy}
+In this dissertation we focus on a population of drug-resistant epilepsy patients whose seizures arise in the neocortex, or the superficial tissue comprising the first functional layers of gray-matter in the brain (\textbf{Fig.~\ref{epilepsy_type}}). Neocortical epilepsy cases are among the most difficult epilepsy types to treat, because their etiology and localization is unique to each patient. Neocortical epilepsy has a variety of causes ranging from genetic to structural and metabolic, and in some cases the cause cannot be identified \cite{berg2010revised}. Of those patients with neocortical epilepsy, seizures may focally originate in the frontal lobe, temporal lobe, occipital lobe, parietal lobe, or from a combination of these regions.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{epilepsy_type}
+\caption[Chart of epilepsy types]{\textbf{Population distribution of epilepsy types.} The distribution of patients with different types of epilepsies. The literature sources used to estimate population percentage is listed at each level. The focus of this work is extratemporal neocortical epilepsy, which has a prevalence of $\approx$6 million people.}
+\label{epilepsy_type}
+\end{figure}
+
+\subsection{Clinical Imaging to Localize Structural and Functional Abnormalities}
+While intracranial monitoring of neural activity associated with epileptic events is indispensable for identifying the seizure origin, multi-modal imaging can often identify lesions (\textbf{Fig.~\ref{typeIIfcd}}) (e.g. focal cortical dysplasia, tuberous sclerosis, other malformations of cortical development), which when resected lead to significantly better odds (2.9 times) of seizure freedom than in cases where imaging returns negative findings \cite{tellez-zenteno2010surgical}. For cases with unknown etiology, only $\approx$54\% of patients attain favorable seizure freedom (Engel score I or II) \cite{lee2005surgical}. Even in cases where no clear lesions are evident on MRI, clinicians collect a variety of imaging modalities providing orthogonal information about the epileptic network. We briefly introduce some of these imaging techniques below \cite{kuzniecky2002neuroimaging}:
+
+\begin{figure}
+\centering
+\includegraphics[width=0.25\textwidth]{typeIIfcd_mri}
+\caption[Example of brain lesion]{\textbf{Example of epileptogenic brain lesion.} A T2-weighted coronal FLAIR image displaying hyperintensity (white) in the inferior precuneus corresponding to a Type IIB focal cortical dysplasia, a common lesion underlying the development of focal seizures \cite{gaillard2015focal}.}
+\label{typeIIfcd}
+\end{figure}
+
+\paragraph{Magnetic Resonance Imaging (MRI)}
+T1 or T2-weighted imaging sequence that enables delineation of gray- and white-matter brain tissue. This imaging modality is most widely used for localizing aberrant migration of neural tissue associated with developmental disorders and investigating anatomical changes due to brain injury. Epilepsy cases with unremarkable MRI are colloquially considered \textit{non-lesional}.
+
+\paragraph{Single Photon Emission Computed Tomography (SPECT)}
+SPECT imaging is used in conjunction with an injectable radioactive tracer, which together yield a dynamic or static picture of blood perfusion through the brain. SPECT may be conducted during the ictal period to identify patterns of seizure onset and spread and, when compared to baseline interictal SPECT, can localize portions of the epileptic network in 70--90\% of patients \cite{kuzniecky2002neuroimaging}. The challenge for clinicians is accurate timing of conducting a SPECT study during seizures, which occur infrequently.
+
+\paragraph{Positron Emission Tomography (PET)}
+For epilepsy patients, PET is often used in conjunction with the radioactive tracer fluorodeoxyglucose (FDG), which together yield an estimate of metabolic activity in imaged tissue. While interictal PET has shown utility in localizing abnormalities in temporal lobe epilepsy, results are less promising for neocortical epilepsy. 
+
+\subsection{Intracranial Monitoring of Brain Electrophysiology}
+Although structural and functional imaging modalities provide significant information regarding abnormal brain tissue, the electrophysiology of neural circuits provide the clearest evidence of dysfunction when diagnosing epilepsy. A patient's neurological team will compile results from imaging and phase-I monitoring of scalp electroencephalography (EEG) and plan an invasive surgery to implant sub-dural, intracranial sensors for monitoring the electrocorticogram (ECoG) (\textbf{Fig.~\ref{intracranial_electrodes}}).  
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{intracranial_electrodes}
+\caption[Implantation of intracranial electrodes]{\textbf{Intracranial electrodes for monitoring epileptic cortex.} (\textbf{A}) Schematic of clinical-scale intracranial electrode with 20 sensors arranged in 4x5 configuration. Center-to-center distance between sensors is 10mm, and each sensor as a diameter of 4mm with 2.3mm exposed to the sub-dural cortical surface. (\textbf{B}) Photograph of a similar electrode with 32 sensors in 4x8 configuration. (\textbf{C}) Intraoperative photograph of implanted electrode in human epilepsy patient with reference to gyral, sulcal, and vascular anatomy.}
+\label{intracranial_electrodes}
+\end{figure}
+
+Each sensor of an ECoG electrode is made from platinum-iridium and captures the local field potential (LFP) of neural activity from superficial layers of the neocortex \cite{buzsaki2012origin}. This LFP represents the extracellular voltage deflection from an aggregated population of neurons and is comprised of the population's synaptic activity and action potential firing patterns. Understanding the composition of the LFP is vital for connecting recorded ECoG activity to the behavior of underlying neural populations. While this is an active area of research, studies mostly agree that (i) action potentials generate a broad-band increase in the spectral power of the LFP, and (ii) spectral power in higher-frequency bands corresponds to more synchronous firing of action potentials, and (iii) higher-frequency components often phase-lock with lower-frequency components of the LFP, signifying a clear relationship between fluctuations of extracellular current and the action potentials produced by these currents \cite{buzsaki2012origin}. Below is list of frequency bands that are commonly identified in neural recordings of LFP and their physiological significance in terms of behavioral functioning:
+
+\paragraph{Delta Band (0--4 Hz)}
+Delta wave oscillations represent the slowest rhythms of LFP, and are typically recorded during the deepest stages of sleep (non-REM).
+
+\paragraph{Theta Band (4--7 Hz)}
+Theta wave oscillations are commonly observed in the hippocampus and the neocortex, although the putative functional role of this rhythm is different between the two brain regions. The hippocampal theta rhythm is typically found during behaviorally active states and have a purported relationship to learning and memory. The neocortical theta rhythm may have relevance to mechanisms of sleep and wakefulness.
+
+\paragraph{Alpha Band (7--15 Hz)}
+Alpha waves were the first discovered brain rhythm and have a strong relationship with activation of visual pathways and opening and closing of the eyes. 
+
+\paragraph{Beta Band (15--30 Hz)}
+Beta waves are believed to represent cognitive processes associated with consciousness. Additionally, beta rhythms are frequently recorded over motor cortex in conjunction with muscle contraction.
+
+\paragraph{Low-Gamma Band (30--7 Hz)}
+
+\paragraph{High-Gamma Band (4--7 Hz)} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|ccc|r|}
+	\hline
+$k$ &  $x_1^k$    &   $x_2^k$  & $x_3^k$   & remarks  \\
+	\hline
+0   & -0.3 & 0.6 & 0.7  &  \\
+1   & 0.47102965 & 0.04883157 & -0.53345964  & *\\
+2   & 0.49988691 & 0.00228830 & -0.52246185 & $s_3$ \\
+3   & 0.49999976 & 0.00005380 & -0.52365600  & \\
+4   & 0.5 & 0.00000307 & -0.52359743  & $\epsilon < 10^{-5}$ \\
+7   & 0.5 & 0 & -0.52359878  & $\epsilon < \xi $ \\
+	\hline
+\end{tabular}
+\caption[A table of important values]{This is a table with {\emph very} important values!!!!!}
+\label{important_values}
+\end{table}
+    
+\uv plane
+    $$ \pdfdx{f}{x} $$
+
+\section{Blah} 
+\lipsum
+\begin{figure}
+\centering
+\includegraphics{parabolic_motion}
+\caption[Parabolic Motion]{Here is parabolic motion as measured with science.}
+\label{parabolic_motion}
+\end{figure}
+\lipsum

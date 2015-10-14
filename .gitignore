@@ -17,3 +17,6 @@
 *.pdf
 *.ps
 *.toc
+*.fls
+*.fdb_latexmk
+*.bib

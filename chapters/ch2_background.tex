@@ -66,49 +66,43 @@ Alpha waves were the first discovered brain rhythm and have a strong relationshi
 \paragraph{Beta Band (15--30 Hz)}
 Beta waves are believed to represent cognitive processes associated with consciousness. Additionally, beta rhythms are frequently recorded over motor cortex in conjunction with muscle contraction.
 
-\paragraph{Low-Gamma Band (30--7 Hz)}
+\paragraph{Low-Gamma Band (30--80 Hz)}
+Rhythmic activity in low-gamma band is often connected to a wide array of cognitive tasks and is believed to play a key role in binding cognitive processes across neural systems to produce consciousness. 
 
-\paragraph{High-Gamma Band (4--7 Hz)} 
+\paragraph{High-Gamma Band (80--500 Hz)} 
+Unlike slower neural oscillations, high-gamma band activity is purported to represent spiking activity of neural populations. High-gamma activity is of great interest to epilepsy researchers because it may be indicative of neural bursting that could initiate epileptiform events.
 
+\subsection{Clinical Mapping of Epileptogenic Cortex}
+For neurologists, rhythmic neural activity in the ECoG is not only indicative of normal brain activity, but also provides clues regarding network dysfunction. Clinicians first characterize ECoG signal properties during three major states: (i) interictal, or baseline, period of ``normal'' brain function that is at least four hours removed from a seizure, (ii) preictal period during which the brain transitions towards a seizure, and (iii) ictal period during which a critical change, away from background ECoG signal properties, occurs (i.e. the seizure).
 
+Based on the time-varying patterns of epileptiform activity, and their spatial distributions, clinicians divide epileptic cortex into various functional regions (\textbf{Fig.~\ref{epileptic_zones}}) \cite{rosenow2001presurgical, nair2004critical}. These regions are:
 
-
-
-
-
-
-
-
-
-
-
-\begin{table}
-\centering
-\begin{tabular}{|c|ccc|r|}
-	\hline
-$k$ &  $x_1^k$    &   $x_2^k$  & $x_3^k$   & remarks  \\
-	\hline
-0   & -0.3 & 0.6 & 0.7  &  \\
-1   & 0.47102965 & 0.04883157 & -0.53345964  & *\\
-2   & 0.49988691 & 0.00228830 & -0.52246185 & $s_3$ \\
-3   & 0.49999976 & 0.00005380 & -0.52365600  & \\
-4   & 0.5 & 0.00000307 & -0.52359743  & $\epsilon < 10^{-5}$ \\
-7   & 0.5 & 0 & -0.52359878  & $\epsilon < \xi $ \\
-	\hline
-\end{tabular}
-\caption[A table of important values]{This is a table with {\emph very} important values!!!!!}
-\label{important_values}
-\end{table}
-    
-\uv plane
-    $$ \pdfdx{f}{x} $$
-
-\section{Blah} 
-\lipsum
 \begin{figure}
 \centering
-\includegraphics{parabolic_motion}
-\caption[Parabolic Motion]{Here is parabolic motion as measured with science.}
-\label{parabolic_motion}
+\includegraphics[width=0.5\textwidth]{epileptic_zones}
+\caption[Diagram of epileptic zones]{\textbf{Organization of epileptic zones in the neocortex.} An example of the relative spatial localization of epileptic zones in the neocortex. The irritative zone displays evidence of interictal and ictal epileptiform activity that is generated in epileptogenic cortex and spreads through local pathways. The seizure-onset zone is the initial site of ictal brain activity. The epileptogenic zone is the hypothetical region that is indispensable for the generation of epileptic activity.}
+\label{epileptic_zones}
 \end{figure}
-\lipsum
+
+\paragraph{Irritative Zone}
+Cortical tissue in this region generates spontaneous epileptiform activity that includes, but is not limited to, interictal spikes, spike-and-wave discharges, high-frequency oscillations, and epileptic bursts. Although these events are pathologic in nature, they do not produce clear symptoms unless a critical mass of activity is reached.
+
+\paragraph{Seizure-Onset Zone}
+This subset of the irritative zone is where clinical seizures are spontaneously generated and is the primary target for surgical resection. Ideally, the seizure-onset zone represents the initial site where the transition from preictal to ictal state occurs. However, the lack of a standardized definition between clinicians yields poor inter-rater reliability of which cortical area truly constitutes the seizure-onset zone.
+
+\paragraph{Epileptogenic Zone}
+This hypothetical region represents the full extent of cortical tissue that is capable of generating spontaneous seizures. In cases where surgical resection of the seizure-onset zone yields complete seizure freedom, the epileptogenic zone and the seizure-onset zone overlap completely. Therefore, the epileptogenic zone is a clinical construct that describes cortical regions that continue to generate seizures after surgical resection of the seizure-onset zone.
+
+\subsection{Options for Surgical Treatment}
+Until recently, surgical manipulation of the cortex was the only major option for treating drug-resistant neocortical epilepsy. Surgeons have typically resorted to resections in the frontal, parietal, and occipital lobes (5-year seizure freedom rates average $\approx$40\%), multiple subpial transections -- shallow cuts into the epileptic cortex to ``disconnect'' tissue generating seizures -- (5-year seizure freedom rates of 16\%), and callosotomy -- cutting of corpus callosum to prevent interhemispheric spread of seizures -- (5-year seizure freedom rates of 35\%) \cite{tellez-zenteno2005long-term}.  The prospect of introducing novel neurotechnologies in targeted ablative therapy and implantable devices has rejuvenated hope for a long-term solution towards controlling seizures.
+
+Laser interstitial thermal therapy (LITT) is a minimally invasive procedure that delivers light energy, percutaneously, towards cortical tissue that requires ablation \cite{tovar-spinoza2013use, medvid2015current}. The surgical technique is image-guided and holds significant promise in epilepsy cases with identifiable focal lesions associated with seizure-onset. Furthermore, surgical cases employing LITT for epilepsy surgery have shown a reduction in cognitive deficit as compared to patients who underwent open resection \cite{drane2015better}. These studies suggest that LITT improves stereotactic control over the surgical target in epilepsy surgery.
+
+Implantable devices that stimulate or modulate brain activity is another promising option for controlling seizures (\textbf{Fig.~\ref{implantable_devices}}) \cite{morrell2011responsive}. In contrast to early neurostimulation devices, newer devices are capable of closed-loop control that can continuously monitor ECoG for epileptic events and responsively stimulate to prevent specific events from evolving into seizures. These devices are exciting because they don't require removal of any tissue and are programmable such that therapy delivery can adjust if a patient's epilepsy characteristics change. While these devices demonstrate substantial seizure reduction, programming them requires an understanding of the electrophysiology that precipitates a patient's seizures and the optimal target for delivering stimulation. 
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{implantable_devices}
+\caption[NeuroPace RNS Device]{\textbf{NeuroPace responsive neurostimulator device.} (\textbf{A}) The NeuroPace stimulator device and attachable electrodes for sensing and stimulating epileptic brain. (\textbf{B}) CT-scan showing an implanted NeuroPace RNS device along with the positioned sensing and stimulating electrodes.}
+\label{implantable_devices}
+\end{figure}

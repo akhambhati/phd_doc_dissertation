@@ -43,6 +43,7 @@ SPECT imaging is used in conjunction with an injectable radioactive tracer, whic
 For epilepsy patients, PET is often used in conjunction with the radioactive tracer fluorodeoxyglucose (FDG), which together yield an estimate of metabolic activity in imaged tissue. While interictal PET has shown utility in localizing abnormalities in temporal lobe epilepsy, results are less promising for neocortical epilepsy. 
 
 \subsection{Intracranial Monitoring of Brain Electrophysiology}
+\label{subsec:ephys}
 Although structural and functional imaging modalities provide significant information regarding abnormal brain tissue, the electrophysiology of neural circuits provide the clearest evidence of dysfunction when diagnosing epilepsy. A patient's neurological team will compile results from imaging and phase-I monitoring of scalp electroencephalography (EEG) and plan an invasive surgery to implant sub-dural, intracranial sensors for monitoring the electrocorticogram (ECoG) (\textbf{Fig.~\ref{intracranial_electrodes}}).  
 
 \begin{figure}
@@ -106,3 +107,47 @@ Implantable devices that stimulate or modulate brain activity is another promisi
 \caption[NeuroPace RNS Device]{\textbf{NeuroPace responsive neurostimulator device.} (\textbf{A}) The NeuroPace stimulator device and attachable electrodes for sensing and stimulating epileptic brain. (\textbf{B}) CT-scan showing an implanted NeuroPace RNS device along with the positioned sensing and stimulating electrodes.}
 \label{implantable_devices}
 \end{figure}
+
+\section{What is the Epileptic Network?}
+Though conventional diagnosis of epilepsy seeks to delineate brain tissue that give rise to seizures, the notion of labeling epilepsy as a network disorder is clouded and generic. Beyond structural and functional abnormalities of cortical \textit{tissue} (e.g. malformations, lesions, epileptiform spikes, high-frequency oscillations), this thesis argues that epilepsy is a dysfunction of cortical \textit{circuits} that aberrantly generate epileptic events and subsequently spread this pathologic activity to secondary brain structures. 
+
+At the outset, we importantly distinguish between notions of structural and functional connectivity of the epileptic network. Though not the focus of this dissertation, structural connectivity describes white-matter fiber pathways between brain regions and are believed to be the primary vehicle for large-scale spreading of seizures through the brain (i.e. secondary generalization). 
+
+\subsection{Functional Connectivity}
+While structural networks describe hardwired, white-matter connections, functional networks are thought of as communication pathways between brain regions that sub-serve neurophysiologic and behavioral operation \cite{bullmore2011brain, friston2011functional, hutchison2013dynamic}. Functional pathways may be dynamic as different neural populations communicate at different points in time. Major challenges towards modeling functional networks is understanding the spatial scale of the recorded brain signal and defining cortical structures comprising \textit{nodes} and neurophysiologic phenomena that signify \textit{connections}.
+
+For networks derived from the electrocorticogram, networks nodes are neural populations measured by intracranial sensors and network edges are statistical relationships of similarity between neural activation patterns \cite{bullmore2011brain, friston2011functional, hutchison2013dynamic}. Under this framework, signals with more similar dynamics have a stronger functional connection between them. The statistical metric used to quantify similarity between signals dictates the neurophysiologic interpretation of a connection. Briefly, we will introduce two notions of functional connectivity used in this work.
+
+\paragraph{Broad-Band Cross-Correlation}
+The cross-correlation is a measure of linear relationships between two variables accounting for a time-dependent lag between observations. That is, how much does the neural activity at node $\mb{x} $ between $t_1$ and $t_2$, linearly relate to the neural activity at node $\mb{y}$ between $t_1+\tau$ and $t_2+\tau$ for a defined lag $\tau$. For any $\tau$, cross-correlation values closer to 1, or -1, indicate strong positive, or negative, linear relationship between signals $\mb{x}$ and $\mb{y}$. Cross-correlation values approaching 0 indicate a lack of linear similarity between the two signals.  
+
+To measure functional connectivity using the cross-correlation similarity function $\bs{\sigma}$, we compute the maximum magnitude (absolute value) value of the cross-correlation for $t$ between $t_1$ and $t_2$ over a range of $\tau$ over the span of $t_2-t_1$ (\textbf{Eqn.~\ref{eqn:xcorr}}). 
+\begin{eqnarray}
+    \bs{\rho}_{\mb{xy}}(t) = \underset{\tau}{\operatorname{argmax}}\:{\mathrm{E}}[(\mb{x}(t) - \mu_{\mb{x}})(\mb{y}(t+\tau) - \mu_{\mb{y}})]
+    \label{eqn:xcorr}
+\end{eqnarray}
+This achieves a couple things: (i) accounts for transmission delays over geographical distances and volume conduction effects observed simultaneously among nearby cortical structures, and (ii) enforces a relationship between cortical structures that says, "any fluctuation in one structure that is correlated to a fluctuation in another structure implies that the two structures are functionally co-dependent." 
+
+A prime advantage to using cross-correlation of broad-band ECoG signal, is that connectivity is not restricted to a priori determined semiology of neural activity. This point is vital in epilepsy, where clinicians are in much disagreement in the labeling of epileptiform events (i.e. what is an epileptic spike? what is a high-frequency oscillation?). Cross-correlation is robust to the shape of the neural activity, and is more concerned with identifying whether any pattern of neural activity in one cortical structure resembles a pattern of neural activity in a second cortical structure, up to a scaling in amplitude.
+
+\paragraph{Band-Specific Coherence}
+As discussed in Section \ref{subsec:ephys}, frequency-dependent structure in the ECoG signal resembles the behavior of local neural populations in the neocortex. By examining similarity of spectral power between network nodes, we can quantify functional relationships between cortical regions based on neurophysiologic behavior (i.e. whether two regions are exhibiting delta, theta, alpha, beta or gamma rhythms at the same time). 
+
+The coherence $\Gamma$ is a normalized measure of the cross-spectral similarity $C$ between two neural signals, $\mb{x}$ and $\mb{y}$, over frequencies $f$ within a spectral band computed for time $t$ between $t_1$ and $t_2$ (\textbf{Eqns.~\ref{eqn:xspd}} and \textbf{\ref{eqn:coh}}). 
+\begin{eqnarray}
+    C_{\mb{xy}}(f) = {\mathrm{E}}[\int_{t_1}^{t_2}\mb{x}(t)\mathrm{e}^{-i 2 \pi ft}dt \int_{t_1}^{t_2}\mb{y}(t)\mathrm{e}^{-i 2 \pi ft}dt]
+\label{eqn:xspd}
+\end{eqnarray}
+\begin{eqnarray}
+    \bs{\Gamma}_{\mb{xy}}(f) = \frac{\abs{C_{\mb{x}\mb{y}}(f)}^2}{\abs{C_{\mb{x}\mb{x}}(f)}\abs{C_{\mb{y}\mb{y}}(f)}}
+\label{eqn:coh}
+\end{eqnarray}
+
+In this thesis, we will focus on coherence of neural activity within low-gamma (30--40 Hz) and high-gamma (95--105 Hz) frequency bands. Prior work has explored the gamma band activity in ECoG, demonstrating they represent neural firing of spatially localized neural ensembles and are active during cognitive, functional tasks  \cite{crone2006high-frequency}. However, functional networks derived from coherence in gamma band is relatively unexplored, but can be a potentially powerful technique for describing hypersynchronization of more local neural populations in epileptic cortex. These studies would be an incremental push forward from prior work demonstrating micro-domains of epileptic activity \cite{worrell2008high-frequency, schevon2009spatial, stead2010microseizures, viventi2011flexible, feldt_muldoon2013spatially, weiss2013ictal}.
+
+\subsubsection{Dynamic Network Analysis Toolbox}
+To conduct many of the network analyses in this study, we developed the \textit{Dynamic Network Analysis Toolbox (DyNe)}. DyNe was developed in the Python programming language and extracts, analyzes, and presents information from sensor networks that evolve with time. DyNe emerges from the rapidly-growing field of complex networks as a toolbox for mapping multidimensional systems whose architecture changes with time. The toolbox comprises of state-of-the-art algorithms to study and visualize system dynamics in real-time (and offline), and is available at \url{https://github.com/akhambhati/dyne}.
+
+DyNe utilizes pipelining to analyze and visualize incoming sensor data and results. A pipeline is an ordered list of modules or pipes that process incoming data in logical steps. While pipeline construction follows general rules dictating which pipes are capable of linking, the end-user has flexibility in choosing which version of a pipe to implement depending on the specific task.
+
+For this work, we used DyNe and created two major pipelines for measuring functional networks from ECoG. The first pipeline estimates time-varying functional connectivity based on broad-band cross-correlation. The second pipeline estimates two time-varying functional networks based on spectral coherence in low-gamma and high-gamma frequency.

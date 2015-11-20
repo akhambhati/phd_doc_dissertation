@@ -23,6 +23,12 @@
 
 %:-------------------------- packages for fancy things -----------------------
 \usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{array}
+\restylefloat{table}
+\newcolumntype{x}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{tabularx}
 \usepackage{graphics} % for improved inclusion of graphics
 %\usepackage{wrapfig} % to include figure with text wrapping around it
 \usepackage[margin=10pt,font=small,labelfont=bf]{caption} % for improved layout of figure captions with extra margin, smaller font than text

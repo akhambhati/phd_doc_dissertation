@@ -120,7 +120,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/}
 \listoffigures	
 
 %: ----------------------- Preface -----------------------------------------
-\include{frontmatter/preface}
+%\include{frontmatter/preface}
 
 
 %: -------------------------------------------------------------------------
@@ -131,7 +131,10 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/}
 
 \include{introduction/ch1_introduction}	
 
-\include{chapters/ch2_background}		
+\include{chapters/ch2_background}
+\include{chapters/ch3_netdrivers}
+\include{chapters/ch4_mapsubnet}
+\include{chapters/ch5_selfreg}		
 			
 \include{conclusion/ch6_conclusion}  
 
@@ -140,9 +143,9 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/}
 % --------------------------------------------------------------
 
 %: ----------------------- Appendicies ------------------------
-\begin{partChapter}
-\include{backmatter/appendix}
-\end{partChapter}
+%\begin{partChapter}
+%\include{backmatter/appendix}
+%\end{partChapter}
 
 % --------------------------------------------------------------
 % backmatter mode set after appendix 
@@ -155,19 +158,19 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/}
 
 % Tie in external source file for definitions: /backmatter/glossary.tex
 % Glossary entries can also be defined in the main text. See glossary.tex
-\include{backmatter/glossary} 
+%\include{backmatter/glossary} 
 
-\clearpage
-\begin{partChapter}
-\begin{multicols}{2} % \begin{multicols}{#columns}[header text][space]
-\begin{footnotesize} % scriptsize(7) < footnotesize(8) < small (9) < normal(10)
+%\clearpage
+%\begin{partChapter}
+%\begin{multicols}{2} % \begin{multicols}{#columns}[header text][space]
+%\begin{footnotesize} % scriptsize(7) < footnotesize(8) < small (9) < normal(10)
 
-\printnomenclature[1.5cm] % [] = distance between entry and description
-\label{nom} % target name for links to glossary
+%\printnomenclature[1.5cm] % [] = distance between entry and description
+%\label{nom} % target name for links to glossary
 
-\end{footnotesize}
-\end{multicols}
-\end{partChapter}
+%\end{footnotesize}
+%\end{multicols}
+%\end{partChapter}
 
 
 % --------------------------------------------------------------
@@ -194,7 +197,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/}
 % --------------------------------------------------------------
 
 \clearpage
-\begin{partChapter}
+%\begin{partChapter}
 %\begin{multicols}{1} % \begin{multicols}{ # columns}[ header text][ space]
 \begin{footnotesize} % tiny(5) < scriptsize(7) < footnotesize(8) < small (9)
 
@@ -205,15 +208,15 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/}
 
 \end{footnotesize}
 %\end{multicols}
-\end{partChapter}
+%\end{partChapter}
 
 
 
 %: ----------------------- Index ------------------------
-\clearpage
-\begin{partChapter}
-\printindex
-\end{partChapter}
+%\clearpage
+%\begin{partChapter}
+%\printindex
+%\end{partChapter}
 
 
 %: --------------------------------------------------------------
